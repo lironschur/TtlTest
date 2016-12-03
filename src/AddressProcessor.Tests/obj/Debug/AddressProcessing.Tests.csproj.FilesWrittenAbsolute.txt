@@ -1,0 +1,9 @@
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/test_data/contacts.csv
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/AddressProcessing.Tests.dll.mdb
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/AddressProcessing.Tests.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/obj/Debug/AddressProcessing.Tests.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/obj/Debug/AddressProcessing.Tests.dll.mdb
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/nunit.framework.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/AddressProcessing.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor.Tests/bin/Debug/AddressProcessing.dll.mdb

@@ -1,0 +1,5 @@
+/Users/lironschur/Dropbox/Public/src/AddressProcessor/obj/Debug/.NETFramework,Version=v4.6.1.AssemblyAttribute.cs
+/Users/lironschur/Dropbox/Public/src/AddressProcessor/bin/Debug/AddressProcessing.dll.mdb
+/Users/lironschur/Dropbox/Public/src/AddressProcessor/bin/Debug/AddressProcessing.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor/obj/Debug/AddressProcessing.dll
+/Users/lironschur/Dropbox/Public/src/AddressProcessor/obj/Debug/AddressProcessing.dll.mdb

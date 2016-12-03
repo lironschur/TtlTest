@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{861D0B6B-8851-4D1C-A3D7-41A11140A3BD}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="AddressProcessor.Tests/CSV/CSVReaderWriterTests.cs">
+    <Files>
+      <File FileName="AddressProcessor/CSV/CSVReaderWriter.cs" Line="35" Column="64" />
+      <File FileName="AddressProcessor/CSV/CSVReaderWriter For Annotation.cs" Line="59" Column="37" />
+      <File FileName="AddressProcessor.Tests/CSV/CSVReaderWriterTests.cs" Line="90" Column="5" />
+      <File FileName="../README.TXT" Line="5" Column="21" />
+      <File FileName="AddressProcessor.Tests/AddressFileProcessorTests.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
