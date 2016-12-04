@@ -10,8 +10,8 @@ namespace AddressProcessing.CSV
 
     public class CSVReaderWriter : IDisposable
     {
-        private StreamReader _readerStream = null;
-        private StreamWriter _writerStream = null;
+        private CSVReader _reader = null;
+        private CSVWriter _writer = null;
 
         [Flags]
         public enum Mode { Read = 1, Write = 2 };
@@ -23,12 +23,11 @@ namespace AddressProcessing.CSV
 			switch(mode)
 			{
 				case Mode.Read:
-                	_readerStream = File.OpenText(fileName);
+                	_reader = new CSVReader(fileName);
 					return;
 
 				case Mode.Write:
-					var fileInfo = new FileInfo(fileName);
-					_writerStream = fileInfo.CreateText();
+					_writer = new CSVWriter(fileName);
 					return;
 
 				default:
@@ -40,8 +39,10 @@ namespace AddressProcessing.CSV
 		// we could write more than 2 columns (but we read only 2); kept for backward compatibility
         public void Write(params string[] columns)
         {
-			var outPut = String.Join(Separator.ToString(), columns);
-            _writerStream.WriteLine(outPut);
+			if (_writer == null)
+				throw new InvalidOperationException("You must call Open for write first");
+
+			_writer.Write(columns);
         }
 
 		// this method should be parameterless but we're keeping the parameters for backward compatibility
@@ -52,39 +53,26 @@ namespace AddressProcessing.CSV
 
         public bool Read(out string column1, out string column2)
         {
-			column1 = null;
-			column2 = null;
+			if (_reader == null)
+				throw new InvalidOperationException("You must call Open for read first");
 
-			var line = _readerStream.ReadLine();
-			if (string.IsNullOrEmpty(line))
-            {
-                return false;
-            }
-
-            var columns = line.Split(Separator);
-			column1 = columns.Length > 0 ? columns[0] : null;
-            column2 = columns.Length > 1 ? columns[1] : null;
-            return columns.Length > 1;
+			return _reader.Read(out column1, out column2);
         }
 
         public void Close()
-        {
-            if (_writerStream != null)
-            {
-                _writerStream.Close();
-				_writerStream = null;
-            }
-
-            if (_readerStream != null)
-            {
-                _readerStream.Close();
-				_readerStream = null;
-            }
+		{
+			_reader?.Dispose();
+			_writer?.Dispose();
         }
 
+		private bool isDisposed = false;
 		public void Dispose()
 		{
-			Close();
+			if (!isDisposed)
+			{
+				Close();
+				isDisposed = true;
+			}
 		}
     }
 }

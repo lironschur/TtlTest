@@ -50,6 +50,30 @@ namespace Csv.Tests
 		}
 
 		[Test]
+		[ExpectedException(typeof(InvalidOperationException))]
+		public void CSVReaderWriter_ReadBeforeOpenRead_ThrowsInvalidOperationExceptionn()
+		{
+			// Act Assert
+			using (var csvReaderWriter = new CSVReaderWriter())
+			{
+				string a = null, b = null;
+				csvReaderWriter.Read(out a, out b);
+			}
+		}
+
+		[Test]
+		[ExpectedException(typeof(InvalidOperationException))]
+		public void CSVReaderWriter_WriteBeforeOpenWrite_ThrowsInvalidOperationException()
+		{
+			// Act Assert
+			using (var csvReaderWriter = new CSVReaderWriter())
+			{
+				csvReaderWriter.Write("a", "b");
+			}
+		}
+
+
+		[Test]
 		public void CSVReaderWriter_WriteThenRead_Success()
 		{
 			const string VAL1 = "val1";
